@@ -1,0 +1,146 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+
+\moderncvtheme[green,roman]{zomg}                % idem
+
+% character encoding
+%\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Tomasz}
+\familyname{Stachowiak}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\title{Software Engineer}
+\address{23 Barbara Road}{Leicester LE3 2EB, England}    % optional, remove the line if not wanted
+\mobile{+44 (0) 785 628 92 84}                   % optional, remove the line if not wanted
+\email{h3@h3.gd}                      % optional, remove the line if not wanted
+\homepage{http://h3.gd}                % optional, remove the line if not wanted
+% \extrainfo{additional information (optional)} % optional, remove the line if not wanted
+% \photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+\quote{Passion for game development.\\Excellent problem-solving skills, seeking new challenges.\\Deep desire to learn and try new approaches.\\Socially open and mediating.}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Education}
+\cventry{2004--2010}{MSc, Computer Science}{Nicolaus Copernicus University}{Toruń, Poland}{}{}  % arguments 3 to 6 can be left empty
+\cvline{Relevant courses}{\small 3D Computer Graphics, Differential Equations, Linear Algebra, Network Programming, Numerical Methods, Parallel and Distributed Programming, Signal Analysis, Stochastic Simulations, Team Programming}
+
+\section{Master's thesis}
+\cvline{Title}{\emph{A flexible system for real-time rendering of three-dimensional scenes}}
+\cvline{Description}{\small Developed a real-time rendering system allowing for shader authoring on a level similar to RenderMan. The proposed architecture facilitates shader reuse between rendering algorithms and prevents errors through a novel type system. Numerous implemented rendering algorithms demonstrate the usefulness of the solution.}
+\cvline{URL}{\small\httplink{http://h3.gd/pub/msc.html}}
+
+\section{Experience}
+\subsection{University Projects}
+\cventry{Oct~2007 -- April~2008}{Lead Programmer}{Deadlock}{}{}{Designed and implemented a multi-player First Person Shooter game and engine from scratch for a Team Programming course.%
+\begin{itemize}%
+\item Management and mentoring of a 5-person team;
+\item Architecture and programming:
+  \begin{itemize}%
+  \item Graphics rendering;
+  \item Network match-making and synchronization;
+  \item Profiling and optimization;
+  \item Basic engine components;
+  \item Tools.
+  \end{itemize}
+\end{itemize}}
+
+\subsection{Select Personal Projects \color{quotecolor}\small(more at \httplink{http://h3.gd/code})}
+\cventry{2008 -- current}{Boxen}{}{}{}{Multi-player vehicle and character-based first-person shooter game and engine.
+\begin{itemize}
+	\item Networked synchronization of Havok Physics.
+\end{itemize}}
+
+\cventry{2007 -- 2008}{Hybrid}{}{}{}{Immediate-Mode Graphical User Interface toolkit for OpenGL.
+\begin{itemize}
+	\item Combining the benefits of IMGUI and RMGUI;
+	\item Efficient sub-pixel rendering of text and widgets.
+\end{itemize}}
+
+\cventry{March 2007}{DShade}{}{}{}{Software 3D renderer.
+\begin{itemize}
+	\item Vertex and pixel shaders on the CPU;
+	\item Clipping, perspective projection, texturing, Z-buffering, blending.
+\end{itemize}}
+
+\cventry{2007 -- 2008}{D Dynamic Libraries}{(contributor)}{}{}{Run-time dynamic compilation and linking of code.
+\begin{itemize}
+	\item Contributed a linking algorithm and numerous fixes;
+	\item Designed and implemented a lazy dynamic compilation system.
+\end{itemize}}
+
+
+\section{Workshops and Conferences}
+\cventry{September~2008}{Tango Conference}{Nicolaus Copernicus University}{Toruń, Poland}{}{Held talks about dynamic linking and game programming for an international audience.}%
+\cventry{2007--2008}{D Workshops}{Nicolaus Copernicus University}{Toruń, Poland}{}{Organized weekly hands-on courses introducing fellow students to the D programing language and basics of OpenGL.}%
+
+\section{Languages}
+\cvlanguage{English}{Fluent}{Finished university courses at the top of the year}
+\cvlanguage{Polish}{Fluent}{My native language}
+\cvlanguage{German}{Basic}{}
+
+%\section{Computer skills}
+%\cvcomputer{Languages}{}{category 4}{XXX, YYY, ZZZ}
+%\cvcomputer{OS}{Windows, Linux}{category 5}{XXX, YYY, ZZZ}
+%\cvcomputer{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+\section{Skills and Interests}
+\cvline{Languages}{Excellent knowledge of C, C++, Cg, D, Python, x86 Assembly.\newline{}
+Basic knowledge of C\#, Java, JavaScript, MaxScript, Scheme.}
+\cvline{API}{OpenGL 3, PhysX, Havok, RakNet, ENet, 3DS Max}
+\cvline{Graphics}{Real-time rendering, reflectance modeling, shader management, visibility determination, ray-tracing, global illumination}
+\cvline{Networking}{Networked physics and gameplay synchronization}
+\cvline{Misc}{Memory management, profiling, compilation and linking, domain-specific languages}
+
+\section{Activities}
+\cvline{Sports}{Inline and ice skating, swimming, running}
+\cvline{Games}{Avid Battlefield player, FPS and RPG enthusiast}
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
