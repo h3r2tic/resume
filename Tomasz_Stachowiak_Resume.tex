@@ -31,9 +31,9 @@
 \mobile{+44 (0) 785 628 92 84}                   % optional, remove the line if not wanted
 \email{h3@h3.gd}                      % optional, remove the line if not wanted
 \homepage{http://h3.gd}                % optional, remove the line if not wanted
-% \extrainfo{additional information (optional)} % optional, remove the line if not wanted
-% \photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-\quote{Passion for game development.\\Excellent problem-solving skills, seeking new challenges.\\Deep desire to learn and try new approaches.\\Socially open and mediating.}                 % optional, remove the line if not wanted
+\extrainfo{\small age: 25; sex: male} % optional, remove the line if not wanted
+% \photo[64pt]{lastfm_mod.png}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+\quote{Passion for game development;\\Excellent problem-solving skills; Seeking new challenges;\\Deep desire to learn and try new approaches;\\Socially open and mediating;}                 % optional, remove the line if not wanted
 
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
 \makeatletter
@@ -51,14 +51,21 @@
 \begin{document}
 \maketitle
 
+\section{Areas of expertise}
+\cvline{$\Longrightarrow$}{\small Design and implementation of a wide range of game and engine components;}
+\cvline{$\Longrightarrow$}{\small Rendering techniques for past and current hardware platforms;}
+\cvline{$\Longrightarrow$}{\small Research into reflectance modeling and shader management systems;}
+\cvline{$\Longrightarrow$}{\small Knowledge of programming paradigms including data- and object- oriented;}
+\cvline{$\Longrightarrow$}{\small Solving complex synchronization challenges in multi-player games;}
+\cvline{$\Longrightarrow$}{\small Understanding and working experience of multi-threaded programming.}
+
 \section{Education}
 \cventry{2004--2010}{MSc, Computer Science}{Nicolaus Copernicus University}{Toruń, Poland}{}{}  % arguments 3 to 6 can be left empty
-\cvline{Relevant courses}{\small 3D Computer Graphics, Differential Equations, Linear Algebra, Network Programming, Numerical Methods, Parallel and Distributed Programming, Signal Analysis, Stochastic Simulations, Team Programming}
+\cvline{Relevant courses}{\small Linear Algebra, Differential Equations, Network Programming, Numerical Methods, Parallel and Distributed Programming, Stochastic Simulations, Team Programming}
 
-\section{Master's thesis}
+\section{Master's thesis \color{quotecolor}\small(more at \httplink{http://h3.gd/pub/msc.html})}
 \cvline{Title}{\emph{A flexible system for real-time rendering of three-dimensional scenes}}
-\cvline{Description}{\small Developed a real-time rendering system allowing for shader authoring on a level similar to RenderMan. The proposed architecture facilitates shader reuse between rendering algorithms and prevents errors through a novel type system. Numerous implemented rendering algorithms demonstrate the usefulness of the solution.}
-\cvline{URL}{\small\httplink{http://h3.gd/pub/msc.html}}
+\cvline{Description}{\small The architecture facilitates shader reuse between rendering algorithms and prevents errors via a novel type system. Authoring on a level similar to RenderMan.}
 
 \section{Experience}
 \subsection{University Projects}
@@ -69,9 +76,7 @@
   \begin{itemize}%
   \item Graphics rendering;
   \item Network match-making and synchronization;
-  \item Profiling and optimization;
-  \item Basic engine components;
-  \item Tools.
+  \item Core engine components, tools, profiling and optimization.
   \end{itemize}
 \end{itemize}}
 
@@ -99,10 +104,9 @@
 	\item Designed and implemented a lazy dynamic compilation system.
 \end{itemize}}
 
-
 \section{Workshops and Conferences}
 \cventry{September~2008}{Tango Conference}{Nicolaus Copernicus University}{Toruń, Poland}{}{Held talks about dynamic linking and game programming for an international audience.}%
-\cventry{2007--2008}{D Workshops}{Nicolaus Copernicus University}{Toruń, Poland}{}{Organized weekly hands-on courses introducing fellow students to the D programing language and basics of OpenGL.}%
+\cventry{2007--2008}{D Workshops}{Nicolaus Copernicus University}{Toruń, Poland}{}{Organized weekly hands-on courses on the D programing language and OpenGL.}%
 
 \section{Languages}
 \cvlanguage{English}{Fluent}{Finished university courses at the top of the year}
@@ -117,14 +121,17 @@
 \section{Skills and Interests}
 \cvline{Languages}{Excellent knowledge of C, C++, Cg, D, Python, x86 Assembly.\newline{}
 Basic knowledge of C\#, Java, JavaScript, MaxScript, Scheme.}
-\cvline{API}{OpenGL 3, PhysX, Havok, RakNet, ENet, 3DS Max}
-\cvline{Graphics}{Real-time rendering, reflectance modeling, shader management, visibility determination, ray-tracing, global illumination}
-\cvline{Networking}{Networked physics and gameplay synchronization}
-\cvline{Misc}{Memory management, profiling, compilation and linking, domain-specific languages}
+\cvline{API}{OpenGL 3, PhysX, Havok, RakNet, ENet, 3DS Max, FreeType, FreeImage, \ldots}
+\cvline{Graphics}{Real-time rendering, reflectance modeling, shader management, visibility determination, ray-tracing, global illumination.}
+\cvline{Networking}{Networked physics and gameplay synchronization with authority schemes.}
+\cvline{Misc}{Memory management, profiling, domain-specific languages, linking.}
 
 \section{Activities}
-\cvline{Sports}{Inline and ice skating, swimming, running}
-\cvline{Games}{Avid Battlefield player, FPS and RPG enthusiast}
+\cvline{Sports}{Inline and ice skating, swimming, running.}
+\cvline{Games}{Avid Battlefield player, FPS and RPG enthusiast.}
+
+\vspace{0.15in}
+\centering\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}
 
 % Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
 \nocite{*}
