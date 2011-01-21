@@ -1,1 +1,3 @@
 xelatex Tomasz_Stachowiak_Resume.tex
+xelatex Tomasz_Stachowiak_Resume.tex
+

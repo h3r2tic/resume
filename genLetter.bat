@@ -1,1 +1,2 @@
 xelatex Tomasz_Stachowiak_Letter.tex
+xelatex Tomasz_Stachowiak_Letter.tex
