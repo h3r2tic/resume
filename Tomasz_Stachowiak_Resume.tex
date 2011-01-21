@@ -17,13 +17,17 @@
 %\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 
 % adjust the page margins
-\usepackage[scale=0.81]{geometry}
+\usepackage[scale=0.8]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
 %\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 %\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
 
+\usepackage[none]{hyphenat}
+\raggedright
+
+
 \newboolean{includeReferences}
-\setboolean{includeReferences}{false}
+\setboolean{includeReferences}{true}
 
 % personal data
 \firstname{Tomasz}
@@ -34,7 +38,7 @@
 \mobile{+44 (0) 785 628 92 84}                   % optional, remove the line if not wanted
 \email{h3@h3.gd}                      % optional, remove the line if not wanted
 \homepage{http://h3.gd}                % optional, remove the line if not wanted
-%\extrainfo{\small age: 25; sex: male} % optional, remove the line if not wanted
+\extrainfo{\small age: 25; sex: male} % optional, remove the line if not wanted
 % \photo[64pt]{lastfm_mod.png}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
 \quote{Passion for game development;\\Excellent problem-solving skills; Seeking new challenges;\\Deep desire to learn and try new approaches;\\Socially open and mediating;}                 % optional, remove the line if not wanted
 
@@ -89,7 +93,8 @@
   \begin{itemize}%
   \item Graphics rendering;
   \item Network match-making and synchronization;
-  \item Core engine components, tools, profiling and optimization.
+  \item Core engine components, tools;
+  \item Profiling and optimization.
   \end{itemize}
 \end{itemize}}
 
@@ -135,7 +140,7 @@
 \cvline{Languages}{Excellent knowledge of C, C++, Cg, D, Python, x86 Assembly.\newline{}
 Basic knowledge of C\#, Java, JavaScript, MaxScript, Scheme.}
 \cvline{API}{OpenGL 3, PhysX, Havok, RakNet, ENet, 3DS Max, FreeType, FreeImage, \ldots}
-\cvline{Graphics}{Real-time rendering, reflectance modeling, shader management, visibility determination, ray-tracing, global illumination.}
+\cvline{Graphics}{Real-time rendering, reflectance modeling, shader management, ray-tracing, visibility determination, global illumination.}
 \cvline{Networking}{Networked physics and gameplay synchronization with authority schemes.}
 \cvline{Misc}{Memory management, profiling, domain-specific languages, linking.}
 
@@ -144,12 +149,12 @@ Basic knowledge of C\#, Java, JavaScript, MaxScript, Scheme.}
 \cvline{Games}{Avid Battlefield player, FPS and RPG enthusiast.}
 
 \ifthenelse{\boolean{includeReferences}}{
-	\vspace{0.25in}
+	\vspace{0.5in}
 	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}
 	\input{./References}
 }{
-	\vspace{0.05in}
-	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}\\[0.04in]
+	\vspace{0.3in}
+	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}\\[0.05in]
 	\centering{\color{quotecolor}\large\emph{References available upon request}}
 }
 
