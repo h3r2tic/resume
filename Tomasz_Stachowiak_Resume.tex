@@ -17,21 +17,24 @@
 %\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
 
 % adjust the page margins
-\usepackage[scale=0.8]{geometry}
+\usepackage[scale=0.81]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
 %\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
 %\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+\newboolean{includeReferences}
+\setboolean{includeReferences}{false}
 
 % personal data
 \firstname{Tomasz}
 \familyname{Stachowiak}
 %\title{Resumé title (optional)}               % optional, remove the line if not wanted
-\title{Software Engineer}
+%\title{Software Engineer}
 \address{23 Barbara Road}{Leicester LE3 2EB, UK}    % optional, remove the line if not wanted
 \mobile{+44 (0) 785 628 92 84}                   % optional, remove the line if not wanted
 \email{h3@h3.gd}                      % optional, remove the line if not wanted
 \homepage{http://h3.gd}                % optional, remove the line if not wanted
-\extrainfo{\small age: 25; sex: male} % optional, remove the line if not wanted
+%\extrainfo{\small age: 25; sex: male} % optional, remove the line if not wanted
 % \photo[64pt]{lastfm_mod.png}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
 \quote{Passion for game development;\\Excellent problem-solving skills; Seeking new challenges;\\Deep desire to learn and try new approaches;\\Socially open and mediating;}                 % optional, remove the line if not wanted
 
@@ -39,6 +42,16 @@
 \makeatletter
 \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 \makeatother
+
+%\usepackage{enumitem}
+\makeatletter
+\newcommand\novspace{\@minipagetrue}
+\makeatother
+
+\renewcommand*{\cvline}[3][.25em]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+ 	  \raggedleft\hintfont{#2} &{\novspace #3}%
+  \end{tabular}\\[#1]}
 
 % bibliography with mutiple entries
 %\usepackage{multibib}
@@ -80,7 +93,7 @@
   \end{itemize}
 \end{itemize}}
 
-\subsection{Select Personal Projects \hspace{0.5em}\color{quotecolor}\small(more at \httplink{http://h3.gd/code})}
+\subsection{Selected Personal Projects \hspace{0.5em}\color{quotecolor}\small(more at \httplink{http://h3.gd/code})}
 \cventry{2008 -- current}{Boxen}{}{}{}{Multi-player vehicle and character-based first-person shooter game and engine.
 \begin{itemize}
 	\item Networked synchronization of Havok Physics.
@@ -130,12 +143,15 @@ Basic knowledge of C\#, Java, JavaScript, MaxScript, Scheme.}
 \cvline{Sports}{Inline and ice skating, swimming, running.}
 \cvline{Games}{Avid Battlefield player, FPS and RPG enthusiast.}
 
-\vspace{0.15in}
-\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}
-
-\newpage
-
-\input{./References}
+\ifthenelse{\boolean{includeReferences}}{
+	\vspace{0.25in}
+	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}
+	\input{./References}
+}{
+	\vspace{0.05in}
+	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}\\[0.04in]
+	\centering{\color{quotecolor}\large\emph{References available upon request}}
+}
 
 % Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
 \nocite{*}
