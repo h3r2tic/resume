@@ -29,11 +29,7 @@
 %\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
 
 \usepackage[none]{hyphenat}
-\raggedright
-
-
-\newboolean{includeReferences}
-\setboolean{includeReferences}{false}
+%\raggedright
 
 % personal data
 \firstname{Tomasz}
@@ -57,10 +53,12 @@
 \newcommand\novspace{\@minipagetrue}
 \makeatother
 
-\renewcommand*{\cvline}[3][.25em]{%
-  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
- 	  \raggedleft\hintfont{#2} &{\novspace #3}%
-  \end{tabular}\\[#1]}
+%\renewcommand*{\cvline}[3][.25em]{%
+%  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+% 	  \raggedleft\hintfont{#2} &{\novspace #3}%
+%  \end{tabular}\\[#1]}
+
+\newcommand{\projecturl}[1]{\textnormal{\hspace{0.5em}\color{quotecolor}\small(\href{#1}{#1})}}
 
 % bibliography with mutiple entries
 %\usepackage{multibib}
@@ -80,35 +78,41 @@
 \cvline{$\Longrightarrow$}{\small Engineering of multi-threaded and distributed systems;}
 \cvline{$\Longrightarrow$}{\small Crafting artist-friendly tools and pipelines.}
 
-\vspace{0.18in}
-
 \section{Work experience}
 
-\vspace{0.07in}
+%\vspace{0.07in}
 
-\cventry{Apr~2011 -- Present}{Creative Assembly}{Alien: Isolation}{}{}{Architected and implemented algorithms for PS3, PS4, XBox 360, XBox One, and PC:%
+\cventry{Apr~2011 -- Present}{Engine Programmer}{Creative Assembly}{Alien: Isolation}{}{Architected and implemented algorithms for PS3, PS4, XBox 360, XBox One, and PC:%
 \begin{itemize}%
 \item Real-time radiosity pipeline, runtime, and tools;
 \item Physically-based rendering;
 \item Skin and hair shading, wrinkle and morph animation;
 \item HDR, tone-mapping, post-processing;
-\item Research, optimization, code maintenance, artist support, smaller features.
+\item Research, optimization, code maintenance, artist support, miscellaneous features.
 \end{itemize}}
+
+\section{Education}
+\cventry{2004--2010}{MSc, Computer Science}{Nicolaus Copernicus University}{Toruń, Poland}{}{}  % arguments 3 to 6 can be left empty
+\cvline{Relevant courses}{\small Linear Algebra, Differential Equations, Network Programming, Numerical Methods, Parallel and Distributed Programming, Stochastic Simulations, Team Programming.}
+
+\section{Master's thesis \projecturl{http://h3.gd/pub/msc.html}}
+\cvline{Title}{\emph{A flexible system for real-time rendering of three-dimensional scenes}}
+\cvline{Description}{\small Presented a rendering architecture which facilitates shader reuse between algorithms, and prevents errors via a semantic type system; RenderMan-like shader stages.}
 
 \section{Personal projects}
 
-\cventry{2013 -- Present}{Shuriken}{}{}{}{Graphics research playground:
+\cventry{2013 -- Present}{Shuriken \projecturl{http://h3.gd/TODO}}{}{}{}{Graphics research playground:
 \begin{itemize}
 	\item Physically-based rendering, real-time reflections;
 	\item Using OpenGL 4 and the Rust programming language.
 \end{itemize}}
 
-\cventry{2008 -- 2010}{Boxen}{}{}{}{Multi-player network programming playground:
+\cventry{2008 -- 2010}{Boxen \projecturl{http://h3.gd/TODO}}{}{}{}{Multi-player network programming playground:
 \begin{itemize}
 	\item Physics synchronization for characters and complex vehicles.
 \end{itemize}}
 
-\cventry{Oct~2007 -- Apr~2008}{Deadlock}{}{}{}{Multi-player FPS game and engine done for a university course:%
+\cventry{Oct~2007 -- Apr~2008}{Deadlock \projecturl{http://h3.gd/code/deadlock/}}{}{}{}{Multi-player FPS game and engine done for a university course:%
 \begin{itemize}%
 \item Management and mentoring of a 5-person team;
 \item Programming:
@@ -119,28 +123,20 @@
   \end{itemize}
 \end{itemize}}
 
-\cventry{2007 -- 2008}{Hybrid}{}{}{}{Immediate-Mode GUI toolkit for OpenGL:
+\cventry{2007 -- 2008}{Hybrid \projecturl{http://h3.gd/code/hybrid/}}{}{}{}{Immediate-Mode GUI toolkit for OpenGL:
 \begin{itemize}
 	\item Combining the benefits of immediate- and retained-mode interfaces;
 	\item Efficient sub-pixel rendering of text and widgets.
 \end{itemize}}
 
-\cventry{Mar 2007}{DShade}{}{}{}{Software 3D renderer:
+\cventry{Mar 2007}{DShade \projecturl{http://h3.gd/TODO}}{}{}{}{Software 3D renderer:
 \begin{itemize}
 	\item Vertex and pixel shaders on the CPU;
 	\item Clipping, perspective projection, texturing, Z-buffering, blending.
 \end{itemize}}
 
-\section{Education}
-\cventry{2004--2010}{MSc, Computer Science}{Nicolaus Copernicus University}{Toruń, Poland}{}{}  % arguments 3 to 6 can be left empty
-\cvline{Relevant courses}{\small Linear Algebra, Differential Equations, Network Programming, Numerical Methods, Parallel and Distributed Programming, Stochastic Simulations, Team Programming.}
-
-\section{Master's thesis \hspace{0.5em}\color{quotecolor}\small(more at \httplink{http://h3.gd/pub/msc.html})}
-\cvline{Title}{\emph{A flexible system for real-time rendering of three-dimensional scenes}}
-\cvline{Description}{\small Presented a rendering architecture which facilitates shader reuse between algorithms, and prevents errors via a semantic type system; RenderMan-like shader stages.}
-
 \section{Workshops and conferences}
-\cventry{Jul~2012}{Develop Conference}{}{Brighton, UK}{}{Detailed multi-BRDF rendering via stencil masking for the PS3 and XBox 360.}%
+\cventry{Jul~2012}{Develop Conference}{}{Brighton, UK \projecturl{http://h3.gd/TODO}}{}{Detailed multi-BRDF rendering via stencil masking for the PS3 and XBox 360.}%
 \cventry{Sep~2008}{Tango Conference}{Nicolaus Copernicus University}{Toruń, Poland}{}{Held talks about run-time linking and game programming for an international audience.}%
 \cventry{2007--2008}{D Workshops}{Nicolaus Copernicus University}{Toruń, Poland}{}{Organized weekly hands-on courses on the D programing language and OpenGL.}%
 
@@ -153,23 +149,13 @@
 \cvline{Programming}{Excellent knowledge of C/C++, HLSL, GLSL, D 1.0, Python.\newline{}
 Working knowledge of Mathematica, MaxScript, x86 Assembly, Rust, C\#, Java.}
 \cvline{API}{OpenGL 4, libgcm, DX9, DX11, FreeType, FreeImage, GLFW, FMOD, ENet, ...}
-\cvline{Graphics}{Physically-based rendering, shader systems, global illumination, path-tracing, climbing the Uncanny Valley.}
+\cvline{Graphics}{Climbing the Uncanny Valley, physically-based rendering, path-tracing, real-time global illumination, shader systems.}
 \cvline{Networking}{Networked physics and gameplay synchronization with authority schemes.}
 \cvline{Misc}{Memory management, profiling, linking, domain-specific languages.}
 
 \section{Activities}
 \cvline{Sports}{Inline and ice skating, swimming, running, martial arts.}
 \cvline{Games}{Battlefield, Mass Effect, Dragon Age, League of Legends.}
-
-\ifthenelse{\boolean{includeReferences}}{
-	\vspace{0.5in}
-%	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}
-	\input{./References}
-}{
-	\vspace{0.3in}
-%	\centering{\color{quotecolor}\large\emph{Please see my demo reel at \httplink{http://bit.ly/f8Xd8c}}}\\[0.05in]
-%	\centering{\color{quotecolor}\large\emph{References available upon request}}
-}
 
 % Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
 \nocite{*}
@@ -185,7 +171,7 @@ Working knowledge of Mathematica, MaxScript, x86 Assembly, Rust, C\#, Java.}
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}   % 'publications' is the name of a BibTeX file
 
-\color{color2}\addressfont{\today}
+%\color{color2}\addressfont{\today}
 \end{document}
 
 
